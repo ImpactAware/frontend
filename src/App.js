@@ -1,25 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
 
+function EventRow(props) {
+ return (
+	 <div className="events__table__row">
+		<div className="events__table__row__data">
+			{props.distance}km
+		</div>
+		<div className="events__table__row__data">
+			{props.time} ago
+		</div>
+		 <div className={"events__table__row__data "+({"destroyed":"red-text ", "nominal":"", "urgent":"yellow-text "})[props.status]}>
+			connection destroyed
+		</div>
+	</div>
+ )
+}
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (<div>
+		<header>
+			<img className="header__logoimage" src="/logo.svg" />
+		</header>
+		<main>
+			<section className="events">
+				<div className="events__title">
+					<h2> Your City is <span className="events__status"> Under Seige </span> </h2>
+				</div>
+				<div className="events__table">
+					<EventRow status="destroyed" time="3h" distance="5" />
+				</div>
+			</section>
+		</main>
+	</div>);
 }
 
 export default App;
