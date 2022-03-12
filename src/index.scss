@@ -31,6 +31,7 @@ header {
 }
 
 .events {
+	font-size: 1.2rem;
 	margin-left: 15rem;
 	margin-right: 15rem;
 	margin-top: 5rem;
@@ -40,12 +41,31 @@ header {
 
 	&__title {
 		display: flex;
+		flex-direction: column;
 		width: 100%;
-		justify-content: center;
+		align-items: center;
 		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+
+	&__table {
+		&__row {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			font-weight: bold;
+			padding: 0.5rem;
+		}
 	}
 }
 
 h2 {
 	font-weight: 900;
+}
+
+.red-text {
+	color: #FCA5A5;
+}
+
+.yellow-text {
+	color: #FCD34D
 }
